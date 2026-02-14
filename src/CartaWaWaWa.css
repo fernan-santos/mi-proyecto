@@ -1,89 +1,606 @@
-/* ============================= */
-/* CONTENEDOR PRINCIPAL */
-/* ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Text:ital@0;1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 .wawawa-container {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 50%, #ffe8f0 100%);
   padding: 20px;
   position: relative;
+  overflow: hidden;
 }
 
-/* ============================= */
-/* CARTA */
-/* ============================= */
-
-.envelope {
-  max-width: 500px;
-  width: 100%;
-  min-height: 300px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+.wawawa-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 105, 180, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 192, 203, 0.15) 0%, transparent 40%);
+  pointer-events: none;
 }
 
-/* ============================= */
-/* SAPOS (VIDEOS) */
-/* ============================= */
-
+/* GIFs decorativos a los lados */
 .gif-left,
 .gif-right {
-  position: relative; /* IMPORTANTE */
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.gif-left {
+  left: 2%;
+  animation: floatLeft 3s ease-in-out infinite;
+}
+
+.gif-right {
+  right: 2%;
+  animation: floatRight 3s ease-in-out infinite;
 }
 
 .gif-left video,
 .gif-right video {
-  width: 220px;
-  max-width: 90%;
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
 }
 
-/* ============================= */
-/* TABLET */
-/* ============================= */
+.gif-left video:hover,
+.gif-right video:hover {
+  transform: scale(1.05);
+}
+
+@keyframes floatLeft {
+  0%, 100% {
+    transform: translateY(-50%) translateY(0);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-15px);
+  }
+}
+
+@keyframes floatRight {
+  0%, 100% {
+    transform: translateY(-50%) translateY(0);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-15px);
+  }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1200px) {
+  .gif-left {
+    left: 8%;
+  }
+  
+  .gif-right {
+    right: 8%;
+  }
+  
+  .gif-left video,
+  .gif-right video {
+    width: 220px;
+  }
+}
+
+.envelope {
+  position: relative;
+  width: 90vw;
+  max-width: 600px;
+  height: 400px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+  transform: scale(1.02);
+}
+
+.envelope-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c94b7a 100%);
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(201, 75, 122, 0.3);
+}
+
+.envelope-back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.05) 10px,
+    rgba(255, 255, 255, 0.05) 20px
+  );
+  border-radius: 8px;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 300px solid transparent;
+  border-right: 300px solid transparent;
+  border-top: 200px solid #ff8fb3;
+  transform-origin: top center;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 3;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.envelope.opened .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  background: linear-gradient(to bottom, #fffbf7 0%, #fff9f5 100%);
+  border-radius: 6px;
+  padding: 40px 30px;
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 2;
+  overflow-y: auto;
+  opacity: 0;
+}
+
+.envelope.opened .letter {
+  opacity: 1;
+}
+
+.letter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      rgba(200, 100, 100, 0.06) 31px,
+      rgba(200, 100, 100, 0.06) 32px
+    );
+  pointer-events: none;
+  border-radius: 6px;
+}
+
+.letter-header {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #c94b7a;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.envelope.opened .letter-header {
+  animation: fadeInDown 0.8s ease-out 0.3s both;
+}
+
+.letter-header::after {
+  content: '♥';
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  font-size: 1.2rem;
+  color: #ff6b9d;
+}
+
+.envelope.opened .letter-header::after {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.letter-content {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #4a2c3e;
+  margin-bottom: 20px;
+}
+
+.envelope.opened .letter-content {
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.letter-content p {
+  margin-bottom: 20px;
+  text-indent: 30px;
+}
+
+.letter-signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #c94b7a;
+  text-align: right;
+  margin-top: 40px;
+}
+
+.envelope.opened .letter-signature {
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.click-hint {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  color: #c94b7a;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.envelope.opened .click-hint {
+  opacity: 0;
+  animation: none;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 1.5rem;
+  animation: floatUp linear forwards;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+@keyframes floatUp {
+  0% {
+    bottom: -20px;
+    opacity: 0.7;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+    transform: translateX(var(--drift)) rotate(360deg);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.3; }
+}
 
 @media (max-width: 768px) {
+  .envelope {
+    max-width: 90vw;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .envelope-flap {
+    border-left: 45vw solid transparent;
+    border-right: 45vw solid transparent;
+    border-top: 150px solid #ff8fb3;
+  }
+
+  .letter {
+    padding: 25px 15px;
+    max-height: 70vh;
+  }
+
+  .letter-header {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .letter-header::after {
+    top: -8px;
+    right: 0;
+    font-size: 1rem;
+  }
+
+  .letter-content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .letter-content p {
+    margin-bottom: 15px;
+    text-indent: 20px;
+  }
+
+  .letter-signature {
+    font-size: 1.3rem;
+    margin-top: 25px;
+  }
+
+  .click-hint {
+    font-size: 0.9rem;
+    bottom: -40px;
+  }
+
+  .floating-heart {
+    font-size: 1.2rem;
+  }
+
+  /* GIFs más pequeños en móvil y posicionados arriba/abajo */
+  .gif-left,
+  .gif-right {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.7;
+}
+
+  .gif-left {
+    top: 5%;
+    animation: floatUp 3s ease-in-out infinite;
+  }
+
+  .gif-right {
+    top: auto;
+    bottom: 5%;
+    animation: floatDown 3s ease-in-out infinite;
+  }
 
   .gif-left video,
   .gif-right video {
-    width: 180px;
+    width: 80px;
   }
 
+  @keyframes floatUp {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+
+  @keyframes floatDown {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+    }
+  }
 }
 
-/* ============================= */
-/* CELULAR */
-/* ============================= */
-
 @media (max-width: 480px) {
-
   .wawawa-container {
     padding: 20px;
     width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .envelope {
     max-width: 95vw;
     min-height: 280px;
-    margin: 0 auto;
+    margin: auto;
   }
 
+  .envelope-flap {
+    border-left: 47.5vw solid transparent;
+    border-right: 47.5vw solid transparent;
+    border-top: 130px solid #ff8fb3;
+  }
+
+  .letter {
+    padding: 20px 12px;
+    width: 90%;
+    height: 90%;
+    max-height: 75vh;
+  }
+
+  .letter-header {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .letter-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .letter-content p {
+    margin-bottom: 12px;
+    text-indent: 15px;
+  }
+
+  .letter-signature {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+
+  .click-hint {
+    font-size: 0.85rem;
+    bottom: -35px;
+  }
+
+  .floating-heart {
+    font-size: 1rem;
+  }
+
+  /* Ocultar GIFs en móviles muy pequeños para mejor legibilidad */
   .gif-left,
   .gif-right {
-    margin-top: 20px;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    animation: none;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .gif-left video,
+  .gif-right video {
+    width: 200px;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .envelope {
+    max-width: 550px;
+    height: 380px;
+  }
+
+  .letter {
+    padding: 35px 25px;
+  }
+
+  .letter-header {
+    font-size: 2.2rem;
+  }
+
+  .letter-content {
+    font-size: 1.15rem;
+  }
+
+  .letter-signature {
+    font-size: 1.6rem;
+  }
+
+  .gif-left {
+    left: 3%;
+  }
+
+  .gif-right {
+    right: 3%;
   }
 
   .gif-left video,
   .gif-right video {
     width: 150px;
   }
+}
 
+@media (orientation: landscape) and (max-height: 600px) {
+  .wawawa-container {
+    padding: 10px;
+  }
+
+  .envelope {
+    max-width: 450px;
+    height: auto;
+    min-height: 250px;
+  }
+
+  .envelope-flap {
+    border-left: 225px solid transparent;
+    border-right: 225px solid transparent;
+    border-top: 120px solid #ff8fb3;
+  }
+
+  .letter {
+    padding: 20px 15px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .letter-header {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .letter-content {
+    font-size: 0.95rem;
+  }
+
+  .letter-content p {
+    margin-bottom: 10px;
+  }
+
+  .letter-signature {
+    font-size: 1.3rem;
+    margin-top: 15px;
+  }
+
+  .click-hint {
+    bottom: -30px;
+  }
 }
