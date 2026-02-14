@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './CartaSWaWaWa.css';
+import './CartaWaWaWa.css';
 
-export default function CartaSWaWaWa() {
+export default function CartaWaWaWa() {
   const [opened, setOpened] = useState(false);
   const [hearts, setHearts] = useState([]);
   const audioRef = useRef(null);
@@ -53,7 +53,7 @@ export default function CartaSWaWaWa() {
   };
 
   return (
-    <div className="valentine-container">
+    <div className="wawawa-conteiner">
       {/* Audio de fondo */}
       <audio
         ref={audioRef}

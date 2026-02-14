@@ -14,7 +14,7 @@ html, body, #root {
   overflow-x: hidden;
 }
 
-.valentine-container {
+.wawawa-container {
   width: 100vw;
   height: 100vh;
   min-height: 100vh;
@@ -27,7 +27,7 @@ html, body, #root {
   overflow: hidden;
 }
 
-.valentine-container::before {
+.wawawa-container::before {
   content: '';
   position: absolute;
   top: 0;
