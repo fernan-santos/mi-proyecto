@@ -53,12 +53,12 @@ html, body, #root {
 }
 
 .gif-left {
-  left: 2%;
+  left: 6%;
   animation: floatLeft 3s ease-in-out infinite;
 }
 
 .gif-right {
-  right: 2%;
+  right: 6%;
   animation: floatRight 3s ease-in-out infinite;
 }
 
