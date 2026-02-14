@@ -82,12 +82,12 @@ export default function CartaWaWaWa() {
 
         <div className="letter">
           <h1 className="letter-header">
-            Para Ti, Mi gatita Aikito
+            Para Ti, mi mocosa wa wa wa
           </h1>
 
           <div className="letter-content">
             <p>
-              Hola, mi mocosa wa wa wa.
+              Hola mo, en estos momentos estas duermiendo, pero no podía esperar a que despertaras para decirte lo mucho que te amo.
               Hoy que es San Valentín quise regalarte estas palabras, porque no quería dejar pasar la oportunidad de decirte lo mucho que significas para mí. Todo este tiempo a tu lado ha marcado mi vida de una forma que nunca imaginé. Hemos compartido risas, momentos difíciles, aprendizajes y sueños, y cada uno de ellos
               ha dejado una huella en mí. Me encantaría que sigamos escribiendo nuestra historia con paciencia, comprensión y mucho cariño.
             </p>
