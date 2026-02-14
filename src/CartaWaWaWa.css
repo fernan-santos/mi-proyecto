@@ -455,20 +455,6 @@ html, body, #root {
   }
 
   .envelope {
-    order: 1;
-  }
-  
-  .gif-left {
-    order: 2;
-    margin-bottom: 15px;
-  }
-
-  .gif-right {
-    order: 3;
-    margin-top: 15px;
-  }
-
-  .envelope {
     max-width: 95vw;
     min-height: 280px;
     margin: auto;
