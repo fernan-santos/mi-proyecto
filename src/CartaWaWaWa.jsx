@@ -63,44 +63,6 @@ export default function CartaWaWaWa() {
         <source src="/aud.mp3" type="audio/mpeg" />
       </audio>
 
-       {/* GIF izquierdo */}
-       <div className="gif-left">
-          <video src="/pepelove.mp4" alt="video/mp4" />
-        </div>
-
-        <div>
-        <br />
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>  </p>
-      </div>
-
-
-      <div>
-        <br />
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>  </p>
-      </div>
-
 
       <div
         className={`envelope ${opened ? 'opened' : ''}`}
@@ -157,8 +119,7 @@ export default function CartaWaWaWa() {
             ✨ Haz clic para abrir ✨
           </div>
         )}
-
-      </div>
+      </div>      
 
       {/* Corazones flotantes */}
       {hearts.map(heart => (
