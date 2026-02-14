@@ -33,6 +33,7 @@ html, body, #root {
   left: 0;
   right: 0;
   bottom: 0;
+
   background-image: 
     radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 70%, rgba(255, 105, 180, 0.1) 0%, transparent 50%),
@@ -42,7 +43,10 @@ html, body, #root {
 
 /* GIFs decorativos a los lados */
 .gif-left,
-.gif-right {
+.gif-right,
+.pepe-3,
+.pepe-2,
+.pepe-1{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -60,9 +64,23 @@ html, body, #root {
   right: 2%;
   animation: floatRight 3s ease-in-out infinite;
 }
-
+.pepe-3 {
+  right: 2%;
+  animation: floatRight 3s ease-in-out infinite;
+}
+.pepe-2 {
+  right: 2%;
+  animation: floatRight 3s ease-in-out infinite;
+}
+.pepe-1 {
+  right: 2%;
+  animation: floatRight 3s ease-in-out infinite;
+}
 .gif-left video,
-.gif-right video {
+.gif-right video,
+.pepe-3 image,
+.pepe-2 image,
+.pepe-1 image{
   width: 200px;
   height: auto;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
@@ -103,7 +121,10 @@ html, body, #root {
   }
   
   .gif-left video,
-  .gif-right video {
+  .gif-right video
+  .pepe-3 image,
+  .pepe-2 image,
+  .pepe-1 image {
     width: 220px;
   }
 }
@@ -403,7 +424,11 @@ html, body, #root {
 
   /* GIFs más pequeños en móvil y posicionados arriba/abajo */
   .gif-left,
-  .gif-right {
+  .gif-right, 
+  .pepe-3,
+  .pepe-2,
+  .pepe-1 {
+    right: 8%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0.7;
@@ -419,9 +444,24 @@ html, body, #root {
     bottom: 6%;
     animation: floatDown 3s ease-in-out infinite;
   }
+  .pepe-3 {
+    top: 6%;
+    animation: floatUp 3s ease-in-out infinite;
+  }
+  .pepe-2 {
+    top: 6%;
+    animation: floatUp 3s ease-in-out infinite;
+  }
+  .pepe-1 {
+    top: 6%;
+    animation: floatUp 3s ease-in-out infinite;
+  }
 
   .gif-left video,
-  .gif-right video {
+  .gif-right video,
+  .pepe-3 image,
+  .pepe-2 image, 
+  .pepe-1 image {
     width: 80px;
   }
 
@@ -504,7 +544,10 @@ html, body, #root {
 
   /* Ocultar GIFs en móviles muy pequeños para mejor legibilidad */
   .gif-left,
-  .gif-right {
+  .gif-right,
+  .pepe-3,
+  .pepe-2,
+  .pepe-1 {
     position: relative;
     top: auto !important;
     bottom: auto !important;
@@ -550,7 +593,10 @@ html, body, #root {
   }
 
   .gif-left video,
-  .gif-right video {
+  .gif-right video
+  .pepe-3 image,
+  .pepe-2 image,
+  .pepe-1 image {
     width: 150px;
   }
 }
