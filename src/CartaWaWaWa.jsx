@@ -68,7 +68,10 @@ export default function CartaWaWaWa() {
           <video src="/pepelove.mp4" alt="video/mp4" />
         </div>
 
-      
+      {/* GIF derecho */}
+      <div className="gif-right">
+        <video src="/pepelove.mp4" alt="video/mp4" />
+      </div>
 
 
       <div>
@@ -135,7 +138,10 @@ export default function CartaWaWaWa() {
         )}
 
 
-    
+      {/* GIF izquierdo */}
+      <div className="gif-left">
+          <video src="/pepelove.mp4" alt="video/mp4" />
+      </div>
 
       {/* GIF derecho */}
       <div className="gif-right">
