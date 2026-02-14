@@ -128,6 +128,17 @@ export default function CartaWaWaWa() {
           <div className="letter-signature">
             De parte de tu Mocoso Wa Wa Wa
           </div>
+
+          {/* GIF izquierdo */}
+          <div className="gif-left">
+              <video src="/pepelove.mp4" alt="video/mp4" />
+            </div>
+
+          {/* GIF derecho */}
+          <div className="gif-right">
+            <video src="/pepelove.mp4" alt="video/mp4" />
+          </div>
+
         </div>
 
         {!opened && (
@@ -140,14 +151,16 @@ export default function CartaWaWaWa() {
       {/* GIF izquierdo */}
       <div className="gif-left">
           <video src="/pepelove.mp4" alt="video/mp4" />
-      </div>
+        </div>
 
       {/* GIF derecho */}
       <div className="gif-right">
         <video src="/pepelove.mp4" alt="video/mp4" />
       </div>
+
       </div>
-      
+
+      {/* Corazones flotantes */}
       {hearts.map(heart => (
         <div
           key={heart.id}
