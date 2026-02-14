@@ -75,7 +75,6 @@ export default function CartaWaWaWa() {
 
 
       <div>
-        <video src="/pepelove.mp4" controls />
         <br />
         <p>      </p>
         <p>      </p>
