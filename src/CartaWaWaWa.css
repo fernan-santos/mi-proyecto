@@ -62,16 +62,16 @@ html, body, #root {
   animation: floatRight 3s ease-in-out infinite;
 }
 
-.gif-left img,
-.gif-right img {
+.gif-left video,
+.gif-right video {
   width: 200px;
   height: auto;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
   transition: transform 0.3s ease;
 }
 
-.gif-left img:hover,
-.gif-right img:hover {
+.gif-left video:hover,
+.gif-right video:hover {
   transform: scale(1.05);
 }
 
@@ -103,8 +103,8 @@ html, body, #root {
     right: 8%;
   }
   
-  .gif-left img,
-  .gif-right img {
+  .gif-left video,
+  .gif-right video {
     width: 220px;
   }
 }
@@ -421,8 +421,8 @@ html, body, #root {
     animation: floatDown 3s ease-in-out infinite;
   }
 
-  .gif-left img,
-  .gif-right img {
+  .gif-left video,
+  .gif-right video {
     width: 80px;
   }
 
@@ -534,14 +534,14 @@ html, body, #root {
     right: 3%;
   }
 
-  .gif-left img,
-  .gif-right img {
+  .gif-left video,
+  .gif-right video {
     width: 140px;
   }
 }
 
 @media (orientation: landscape) and (max-height: 600px) {
-  .valentine-container {
+  .wawawa-container {
     padding: 10px;
   }
 
