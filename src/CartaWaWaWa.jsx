@@ -68,9 +68,20 @@ export default function CartaWaWaWa() {
           <video src="/pepelove.mp4" alt="video/mp4" />
         </div>
 
-      {/* GIF derecho */}
-      <div className="gif-right">
-        <video src="/pepelove.mp4" alt="video/mp4" />
+        <div>
+        <br />
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>      </p>
+        <p>  </p>
       </div>
 
 
@@ -146,7 +157,7 @@ export default function CartaWaWaWa() {
             ✨ Haz clic para abrir ✨
           </div>
         )}
-        
+
       </div>
 
       {/* Corazones flotantes */}
