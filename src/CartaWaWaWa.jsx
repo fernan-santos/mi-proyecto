@@ -121,6 +121,11 @@ export default function CartaWaWaWa() {
         )}
       </div>      
 
+
+      <div className="pepe-4">
+            <image src="/pepe4.jpeg" alt="imagen/jpeg" />
+          </div>
+
       {/* Corazones flotantes */}
       {hearts.map(heart => (
         <div
