@@ -119,6 +119,16 @@ export default function CartaWaWaWa() {
         )}
       </div>
 
+      {/* GIF izquierdo */}
+      <div className="gif-left">
+        <video src="/pepelove.mp4" alt="video/mp4" />
+      </div>
+
+      {/* GIF derecho */}
+      <div className="gif-right">
+        <video src="/pepelove.mp4" alt="video/mp4" />
+      </div>
+
       {hearts.map(heart => (
         <div
           key={heart.id}
