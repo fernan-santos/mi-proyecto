@@ -15,8 +15,7 @@ html, body, #root {
 }
 
 .wawawa-container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -53,12 +52,12 @@ html, body, #root {
 }
 
 .gif-left {
-  left: 6%;
+  left: 2%;
   animation: floatLeft 3s ease-in-out infinite;
 }
 
 .gif-right {
-  right: 6%;
+  right: 2%;
   animation: floatRight 3s ease-in-out infinite;
 }
 
@@ -446,13 +445,16 @@ html, body, #root {
 }
 
 @media (max-width: 480px) {
-  .valentine-container {
-    padding: 10px;
+  .wawawa-container {
+    padding: 20px;
+    width: 100%;
+    min-height: 100vh;
   }
 
   .envelope {
     max-width: 95vw;
     min-height: 280px;
+    margin: auto;
   }
 
   .envelope-flap {
