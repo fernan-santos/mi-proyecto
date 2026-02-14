@@ -455,14 +455,28 @@ html, body, #root {
   }
 
   .envelope {
+    order: 1;
+  }
+  
+  .gif-left {
+    order: 2;
+    margin-bottom: 15px;
+  }
+
+  .gif-right {
+    order: 3;
+    margin-top: 15px;
+  }
+
+  .envelope {
     max-width: 95vw;
     min-height: 280px;
     margin: auto;
   }
 
   .envelope-flap {
-    border-left: 47.5vw solid transparent;
-    border-right: 47.5vw solid transparent;
+    border-left: 47.5vw solid;
+    border-right: 47.5vw solid;
     border-top: 130px solid #ff8fb3;
   }
 
@@ -505,23 +519,19 @@ html, body, #root {
   /* Ocultar GIFs en móviles muy pequeños para mejor legibilidad */
   .gif-left,
   .gif-right {
-    position: relative;
-    top: auto;
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
     left: auto;
     right: auto;
-    transform: none;
-    animation: none;
-    margin-top: 30px;
+    transform: none !important;
+    animation: none !important;
+    opacity: 1;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-  }
-
-  .gif-left video,
-  .gif-right video {
-    width: 200px;
-  }
 }
-
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .envelope {
