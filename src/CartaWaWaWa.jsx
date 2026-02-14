@@ -63,16 +63,7 @@ export default function CartaWaWaWa() {
         <source src="/aud.mp3" type="audio/mpeg" />
       </audio>
       
-      {/* GIF izquierdo */}
-      <div className="gif-left">
-          <video src="/pepelove.mp4" alt="video/mp4" />
-        </div>
 
-      {/* GIF derecho */}
-      <div className="gif-right">
-        <video src="/pepelove.mp4" alt="video/mp4" />
-      </div>
-      
       <div
         className={`envelope ${opened ? 'opened' : ''}`}
         onClick={handleEnvelopeClick}
