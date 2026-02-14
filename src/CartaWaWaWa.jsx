@@ -65,12 +65,12 @@ export default function CartaWaWaWa() {
 
       {/* GIF izquierdo */}
       <div className="gif-left">
-        <img src="/pepelove.gif" alt="decoración" />
+        <img src="/pepelove.mp4" alt="decoración" />
       </div>
 
       {/* GIF derecho */}
       <div className="gif-right">
-        <img src="/pepelove.gif" alt="decoración" />
+        <img src="/pepelove.mp4" alt="decoración" />
       </div>
 
       <div
