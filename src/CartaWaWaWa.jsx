@@ -68,10 +68,7 @@ export default function CartaWaWaWa() {
           <video src="/pepelove.mp4" alt="video/mp4" />
         </div>
 
-      {/* GIF derecho */}
-      <div className="gif-right">
-        <video src="/pepelove.mp4" alt="video/mp4" />
-      </div>
+      
 
 
       <div>
@@ -87,21 +84,10 @@ export default function CartaWaWaWa() {
         <p>      </p>
         <p>      </p>
         <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
+        <p>  </p>
+        </div>
+
+
 
       <div
         className={`envelope ${opened ? 'opened' : ''}`}
@@ -147,19 +133,9 @@ export default function CartaWaWaWa() {
             ✨ Haz clic para abrir ✨
           </div>
         )}
-      </div>
-      <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-        <p>      </p>
-      </div>
 
 
-    {/* GIF izquierdo */}
-      <div className="gif-left">
-        <video src="/pepelove.mp4" alt="video/mp4" />
-      </div>
+    
 
       {/* GIF derecho */}
       <div className="gif-right">
@@ -181,5 +157,6 @@ export default function CartaWaWaWa() {
         </div>
       ))}
     </div>
+  </div>
   );
 }
