@@ -88,8 +88,7 @@ export default function CartaWaWaWa() {
         <p>      </p>
         <p>      </p>
         <p>  </p>
-        </div>
-
+      </div>
 
 
       <div
@@ -147,7 +146,8 @@ export default function CartaWaWaWa() {
       <div className="gif-right">
         <video src="/pepelove.mp4" alt="video/mp4" />
       </div>
-
+      </div>
+      
       {hearts.map(heart => (
         <div
           key={heart.id}
@@ -163,6 +163,5 @@ export default function CartaWaWaWa() {
         </div>
       ))}
     </div>
-  </div>
   );
 }
