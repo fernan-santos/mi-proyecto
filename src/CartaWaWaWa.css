@@ -519,7 +519,7 @@ html, body, #root {
   /* Ocultar GIFs en móviles muy pequeños para mejor legibilidad */
   .gif-left,
   .gif-right {
-    position: relative !important;
+    position: relative;
     top: auto !important;
     bottom: auto !important;
     left: auto;
